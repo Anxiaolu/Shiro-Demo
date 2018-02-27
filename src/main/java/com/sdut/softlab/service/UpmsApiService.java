@@ -16,6 +16,7 @@ import com.sdut.softlab.entity.UpmsSystemExample;
 import com.sdut.softlab.entity.UpmsUser;
 import com.sdut.softlab.entity.UpmsUserPermission;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  *

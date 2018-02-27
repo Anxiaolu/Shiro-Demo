@@ -39,7 +39,7 @@
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations">
             <list>
-                <value>classpath*:com/sdut/softlab/mapper/*Mapper.xml</value>
+                <value>classpath:com/sdut/softlab/mapper/*Mapper.xml</value>
             </list>
         </property>
         <property name="plugins">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zheng.upms.dao.mapper.UpmsUserMapper">
+<mapper namespace="com.sdut.softlab.mapper.UpmsUserMapper">
   <resultMap id="BaseResultMap" type="com.sdut.softlab.entity.UpmsUser">
     <id column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -302,5 +302,5 @@
       ctime = #{ctime,jdbcType=BIGINT}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <cache type="org.mybatis.caches.ehcache.LoggingEhcache" />
+<!--  <cache type="org.mybatis.caches.ehcache.LoggingEhcache" />-->
 </mapper>

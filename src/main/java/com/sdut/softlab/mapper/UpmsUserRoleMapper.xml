@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zheng.upms.dao.mapper.UpmsUserRoleMapper">
+<mapper namespace="com.sdut.softlab.mapper.UpmsUserRoleMapper">
   <resultMap id="BaseResultMap" type="com.sdut.softlab.entity.UpmsUserRole">
     <id column="user_role_id" jdbcType="INTEGER" property="userRoleId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
@@ -178,5 +178,5 @@
       role_id = #{roleId,jdbcType=INTEGER}
     where user_role_id = #{userRoleId,jdbcType=INTEGER}
   </update>
-  <cache type="org.mybatis.caches.ehcache.LoggingEhcache" />
+  <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache" />-->
 </mapper>

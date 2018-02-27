@@ -11,9 +11,24 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:Spring/spring-*.xml
+            classpath:Spring/Spring-*.xml
         </param-value>
     </context-param>
+    
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     
     <!-- springMVC的核心控制器 -->
     <servlet>
@@ -21,7 +36,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:spring/spring-Context.xml</param-value>
+            <param-value>classpath*:Spring/Spring-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
@@ -33,7 +48,7 @@
     
     <!-- log4j 系统日志-->
     <context-param>
-        <param-name>log4jConfigLocation</param-name>
+        <param-name>log4jConfigLocation</param-name>        
         <param-value>classpath:log4j.properties</param-value>
     </context-param>
     <listener>

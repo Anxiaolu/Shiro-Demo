@@ -5,10 +5,8 @@
  */
 package com.sdut.softlab;
 
-import java.security.Key;
-import org.apache.commons.codec.binary.Hex;
-import org.apache.shiro.crypto.AesCipherService;
-import org.junit.Assert;
+import com.sdut.softlab.entity.UpmsUser;
+import java.lang.reflect.Method;
 import org.junit.Test;
 
 /**
@@ -16,20 +14,35 @@ import org.junit.Test;
  * @author huanlu
  */
 public class EncodeTest {
-    
-    @Test
-    public void encodeTest(){
-        AesCipherService aesCipherService = new AesCipherService();
-        aesCipherService.setKeySize(128);
-        //生成key  
-        Key key = aesCipherService.generateNewKey();
-        String text = "hello";
-        //加密  
-        String encrptText
-            = aesCipherService.encrypt(text.getBytes(), key.getEncoded()).toHex();
-        //解密  
-        String text2 = new String(aesCipherService.decrypt(Hex.decode(encrptText), key.getEncoded()).getBytes());
 
-        Assert.assertEquals(text, text2);
+    @Test
+    public void test() {
+
+        UpmsUser cls = new UpmsUser();
+        Class c = cls.getClass();
+
+        try {
+            // parameter type is null  
+            Method m = c.getDeclaredMethod("show", null);
+            System.out.println("method = " + m.toString());
+
+            // method Integer  
+            Class[] cArg = new Class[1];
+            cArg[0] = Integer.class;
+            Method lMethod = c.getDeclaredMethod("showInteger", cArg);
+            System.out.println("method = " + lMethod.toString());
+
+        } catch (NoSuchMethodException e) {
+            System.out.println(e.toString());
+        }
     }
+
+    private Integer show() {
+        return 1;
+    }
+
+    public void showInteger(Integer i) {
+        this.i = i;
+    }
+    public int i = 78655;
 }
