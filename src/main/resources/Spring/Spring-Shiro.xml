@@ -36,7 +36,7 @@
     </bean>
 
     <!-- 会话DAO -->
-    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+    <bean id="sessionDAO" class="com.sdut.softlab.shiro.session.UpmsSession">
         <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
         <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
     </bean>
@@ -50,7 +50,7 @@
     <!--会话监听-->
     <bean id="sessionListener" class="com.sdut.softlab.shiro.listener.UpmsSessionListener"></bean>
     
-<!--    <bean id="sessionFactory" class="com.sdut.softlab.shiro.session.UpmsSessionFactory"></bean>-->
+    <bean id="sessionFactory" class="com.sdut.softlab.shiro.session.UpmsSessionFactory"></bean>
 
     <!-- 会话管理器 -->
     <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
@@ -66,7 +66,7 @@
                 <ref bean="sessionListener"/>
             </list>
         </property>
-<!--        <property name="sessionFacotry" ref="sessionFactroy"/>-->
+        <property name="sessionFacotry" ref="sessionFactroy"/>
     </bean>
 
     <!-- 安全管理器 -->

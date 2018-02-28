@@ -26,8 +26,9 @@ public class UpmsSessionDao extends CachingSessionDAO{
 
     @Override
     protected Serializable doCreate(Session session) {
-        Serializable sessionId = generateSessionId(session);
-        assignSessionId(session, sessionId);
+//        Serializable sessionId = generateSessionId(session);
+//        assignSessionId(session, sessionId);
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
